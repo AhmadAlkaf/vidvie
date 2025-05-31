@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - فدفي</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar (نفس النافبار الموجود في index.html) -->
+     <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo"><img src="images/logo.png" alt="شعار فدفي"></a>
+            <nav>
+                <ul class="navbar-links">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="products.html">المنتجات</a></li>
+                    <li><a href="#">الجديد</a></li>
+                    <li><a href="#">الفئات</a></li>
+                    <li><a href="#">الطلبات</a></li>
+                </ul>
+            </nav>
+            <div class="navbar-actions">
+                <a href="#" class="search-icon" title="بحث"><i class="fas fa-search"></i></a>
+                <a href="register.html" title="إنشاء حساب"><i class="fas fa-user-plus"></i></a>
+                <a href="login.html" title="تسجيل الدخول" class="active"><i class="fas fa-sign-in-alt"></i></a> <!-- Active link -->
+                <a href="cart.html" class="cart-icon" title="سلة التسوق">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                 <button class="navbar-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="auth-section">
+            <div class="auth-form-container">
+                <h2>تسجيل الدخول</h2>
+                <form action="#" method="POST"> <!-- يجب تعديل action للـ backend -->
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني أو اسم المستخدم</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">كلمة المرور</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">دخــول</button>
+                    </div>
+                </form>
+                <div class="links">
+                    <a href="#">نسيت كلمة المرور؟</a>
+                    <br><br>
+                    <span>ليس لديك حساب؟ <a href="register.html">إنشاء حساب جديد</a></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (نفس الفوتر الموجود في index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <!-- ... نفس محتوى الفوتر ... -->
+             <div class="footer-col"><h4>عن فدفي</h4><ul><li><a href="#">من نحن</a></li><li><a href="#">وظائف</a></li><li><a href="#">المدونة</a></li></ul></div>
+            <div class="footer-col"><h4>خدمة العملاء</h4><ul><li><a href="#">مركز المساعدة</a></li><li><a href="#">سياسة الإرجاع</a></li><li><a href="#">تتبع الطلب</a></li><li><a href="#">اتصل بنا</a></li></ul></div>
+            <div class="footer-col"><h4>روابط سريعة</h4><ul><li><a href="#">الشروط والأحكام</a></li><li><a href="#">سياسة الخصوصية</a></li><li><a href="#">خريطة الموقع</a></li></ul></div>
+            <div class="footer-col"><h4>تابعنا</h4><div class="social-links"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></div></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2023 فدفي. جميع الحقوق محفوظة.</p></div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

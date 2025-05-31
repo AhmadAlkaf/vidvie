@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سلة التسوق - فدفي</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+     <!-- Google Fonts (Cairo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar (نفس النافبار) -->
+     <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo"><img src="images/logo.png" alt="شعار فدفي"></a>
+            <nav>
+                <ul class="navbar-links">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="products.html">المنتجات</a></li>
+                    <li><a href="#">الجديد</a></li>
+                    <li><a href="#">الفئات</a></li>
+                    <li><a href="#">الطلبات</a></li>
+                </ul>
+            </nav>
+            <div class="navbar-actions">
+                <a href="#" class="search-icon" title="بحث"><i class="fas fa-search"></i></a>
+                <a href="#" title="إنشاء حساب"><i class="fas fa-user-plus"></i></a>
+                <a href="#" title="تسجيل الدخول"><i class="fas fa-sign-in-alt"></i></a>
+                <a href="cart.html" class="cart-icon active" title="سلة التسوق"> <!-- جعلها نشطة في صفحة السلة -->
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">2</span> <!-- مثال: يوجد منتجان في السلة -->
+                </a>
+                 <button class="navbar-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="cart-page">
+        <section>
+            <div class="container">
+                <h1>سلة التسوق الخاصة بك</h1>
+
+                <!-- Cart Items Table -->
+                <div class="cart-items">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="2">المنتج</th> <!-- دمج خليتين للمنتج والصورة -->
+                                <th>السعر</th>
+                                <th>الكمية</th>
+                                <th>الإجمالي</th>
+                                <th></th> <!-- للحذف -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Cart Item 1 -->
+                            <tr>
+                                <td colspan="2">
+                                    <div class="cart-product-info">
+                                        <a href="product-detail.html"><img src="images/product1.jpg" alt="اسم المنتج 1"></a>
+                                        <div>
+                                            <a href="product-detail.html" class="product-name">اسم المنتج الأول</a>
+                                            <small>المقاس: M, اللون: أسود</small> <!-- عرض الخيارات المختارة إن وجدت -->
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>99.00 ر.س</td>
+                                <td>
+                                    <div class="quantity-selector">
+                                         <button class="quantity-minus" aria-label="Decrease quantity">-</button>
+                                        <input type="number" value="1" min="1" max="10" aria-label="Quantity">
+                                        <button class="quantity-plus" aria-label="Increase quantity">+</button>
+                                    </div>
+                                </td>
+                                <td>99.00 ر.س</td>
+                                <td>
+                                    <button class="remove-item-btn" title="إزالة المنتج">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Cart Item 2 -->
+                             <tr>
+                                <td colspan="2">
+                                    <div class="cart-product-info">
+                                        <a href="product-detail.html"><img src="images/product4.jpg" alt="اسم المنتج 4"></a>
+                                        <div>
+                                            <a href="product-detail.html" class="product-name">المنتج الرابع بتصميم جذاب</a>
+                                             <small>المقاس: L, اللون: أزرق</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>210.00 ر.س</td>
+                                <td>
+                                     <div class="quantity-selector">
+                                         <button class="quantity-minus" aria-label="Decrease quantity">-</button>
+                                        <input type="number" value="1" min="1" max="5" aria-label="Quantity">
+                                        <button class="quantity-plus" aria-label="Increase quantity">+</button>
+                                    </div>
+                                </td>
+                                <td>210.00 ر.س</td>
+                                <td>
+                                     <button class="remove-item-btn" title="إزالة المنتج">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+                             <!-- يمكنك إضافة رسالة إذا كانت السلة فارغة -->
+                            <!--
+                            <tr>
+                                <td colspan="6" style="text-align: center; padding: 40px;">
+                                    سلة التسوق فارغة. <a href="products.html">ابدأ التسوق الآن!</a>
+                                </td>
+                            </tr>
+                            -->
+
+                        </tbody>
+                    </table>
+                </div>
+
+                 <!-- Order Summary -->
+                <div class="order-summary">
+                    <h2>ملخص الطلب</h2>
+                    <div class="summary-row">
+                        <span>المجموع الفرعي</span>
+                        <span>309.00 ر.س</span> <!-- يتم حسابه بـ JS -->
+                    </div>
+                    <div class="summary-row">
+                        <span>الشحن</span>
+                        <span>سيتم تحديده عند الدفع</span>
+                         <!-- أو يمكنك وضع قيمة تقديرية -->
+                         <!-- <span>15.00 ر.س</span> -->
+                    </div>
+                    <div class="summary-row">
+                        <span>الضرائب (15%)</span>
+                        <span>46.35 ر.س</span> <!-- يتم حسابه بـ JS -->
+                    </div>
+                    <div class="summary-row total">
+                        <span>المجموع الإجمالي</span>
+                        <span>355.35 ر.س</span> <!-- يتم حسابه بـ JS -->
+                    </div>
+                     <!-- Promo Code (اختياري) -->
+                    <form style="margin-top: 20px; display: flex; gap: 10px;">
+                         <input type="text" placeholder="أدخل كوبون الخصم" style="flex-grow: 1; padding: 10px; border: 1px solid var(--border-color); border-radius: 4px;">
+                         <button type="submit" class="btn btn-secondary">تطبيق</button>
+                    </form>
+                </div>
+
+
+                 <!-- Cart Actions -->
+                <div class="cart-actions">
+                    <a href="products.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-right"></i> متابعة التسوق <!-- السهم لليمين في RTL -->
+                    </a>
+                    <a href="#" class="btn btn-primary btn-checkout">
+                        التقدم لإتمام الشراء <i class="fas fa-arrow-left"></i> <!-- السهم لليسار في RTL -->
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (نفس الفوتر) -->
+    <footer class="footer">
+         <div class="container">
+             <div class="footer-col"><h4>عن فدفي</h4><ul><li><a href="#">من نحن</a></li><li><a href="#">وظائف</a></li><li><a href="#">المدونة</a></li></ul></div>
+            <div class="footer-col"><h4>خدمة العملاء</h4><ul><li><a href="#">مركز المساعدة</a></li><li><a href="#">سياسة الإرجاع</a></li><li><a href="#">تتبع الطلب</a></li><li><a href="#">اتصل بنا</a></li></ul></div>
+            <div class="footer-col"><h4>روابط سريعة</h4><ul><li><a href="#">الشروط والأحكام</a></li><li><a href="#">سياسة الخصوصية</a></li><li><a href="#">خريطة الموقع</a></li></ul></div>
+            <div class="footer-col"><h4>تابعنا</h4><div class="social-links"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></div></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2023 فدفي. جميع الحقوق محفوظة.</p></div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

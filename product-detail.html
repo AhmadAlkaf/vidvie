@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المنتج - فدفي</title> <!-- يجب تغيير العنوان ديناميكياً لاسم المنتج -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+     <!-- Google Fonts (Cairo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar (نفس النافبار) -->
+     <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo"><img src="images/logo.png" alt="شعار فدفي"></a>
+            <nav>
+                <ul class="navbar-links">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="products.html">المنتجات</a></li>
+                     <li><a href="#">الجديد</a></li>
+                    <li><a href="#">الفئات</a></li>
+                    <li><a href="#">الطلبات</a></li>
+                </ul>
+            </nav>
+            <div class="navbar-actions">
+                <a href="#" class="search-icon" title="بحث"><i class="fas fa-search"></i></a>
+                <a href="#" title="إنشاء حساب"><i class="fas fa-user-plus"></i></a>
+                <a href="#" title="تسجيل الدخول"><i class="fas fa-sign-in-alt"></i></a>
+                <a href="cart.html" class="cart-icon" title="سلة التسوق">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span> <!-- تحديث بـ JS -->
+                </a>
+                <button class="navbar-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="product-detail-page">
+        <div class="container">
+             <!-- Breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <a href="index.html">الرئيسية</a> &gt;
+                <a href="products.html?category=clothing">ملابس</a> &gt; <!-- يجب أن تكون الفئة ديناميكية -->
+                <span>اسم المنتج المفصل هنا</span> <!-- اسم المنتج ديناميكي -->
+            </nav>
+
+            <section class="product-main">
+                <!-- Product Gallery -->
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img src="images/product1.jpeg" alt="صورة المنتج الرئيسية" id="mainProductImage">
+                         <!-- يمكنك إضافة خاصية تكبير هنا بـ JS -->
+                    </div>
+                    <div class="thumbnail-images">
+                        <img src="images/product1.jpeg" alt="صورة مصغرة 1" class="active" data-large="images/product1.jpeg">
+                        <img src="images/product1.jpeg" alt="صورة مصغرة 2" data-large="images/product1.jpeg">
+                        <img src="images/product1.jpeg" alt="صورة مصغرة 3" data-large="images/product1.jpeg">
+                        <!-- أضف المزيد من الصور المصغرة إذا وجدت -->
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h1>اسم المنتج المفصل هنا</h1> <!-- اسم المنتج ديناميكي -->
+
+                    <!-- <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i> 
+                        <a href="#reviews" class="review-count">(15 مراجعة)</a> 
+                    </div> -->
+
+                    <div class="product-price">
+                        99.00 ر.س
+                        <span class="old-price">120.00 ر.س</span> 
+                    </div>
+
+                    <p class="product-description-short">
+                        هذا وصف مختصر وجذاب للمنتج يبرز أهم مميزاته. مصمم ليكون مريحاً وأنيقاً، ومناسب للعديد من المناسبات.
+                    </p>
+
+                    <!-- Product Options (إذا وجدت) -->
+                    <div class="product-options">
+                        <!-- <label for="size-select">المقاس:</label>
+                        <select name="size" id="size-select">
+                            <option value="">اختر المقاس</option>
+                            <option value="s">صغير (S)</option>
+                            <option value="m">متوسط (M)</option>
+                            <option value="l">كبير (L)</option>
+                            <option value="xl">كبير جداً (XL)</option>
+                        </select> -->
+
+                        <label for="color-select">اللون:</label>
+                        <select name="color" id="color-select">
+                            <option value="">اختر اللون</option>
+                            <option value="red">أحمر</option>
+                            <option value="blue">أزرق</option>
+                            <option value="black">أسود</option>
+                        </select>
+                    </div>
+
+                    <!-- Quantity Selector -->
+                    <div class="quantity-selector">
+                        <label for="quantity-input">الكمية:</label>
+                        <button class="quantity-minus" aria-label="Decrease quantity">-</button>
+                        <input type="number" id="quantity-input" name="quantity" value="1" min="1" max="10"> <!-- حد أقصى للمخزون؟ -->
+                        <button class="quantity-plus" aria-label="Increase quantity">+</button>
+                    </div>
+
+                    <!-- Add to Cart Button -->
+                    <button class="btn btn-primary add-to-cart-btn">
+                        <i class="fas fa-shopping-cart"></i> إضافة إلى السلة
+                    </button>
+
+                    <!-- (اختياري) Add to Wishlist -->
+                     <!-- <button class="btn btn-secondary" style="width: 100%; margin-top: 10px;">
+                        <i class="far fa-heart"></i> إضافة إلى المفضلة
+                     </button> -->
+
+
+                    <!-- Additional Info -->
+                    <div style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-color);">
+                        <p>رمز المنتج (SKU): <span id="product-sku">FDFY-001</span></p>
+                        <p>التوفر: <span style="color: var(--success-color); font-weight: bold;">متوفر في المخزون</span></p>
+                        <p>الفئة: <a href="products.html?category=clothing">ملابس</a></p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Extended Details (Description, Specs, Reviews) -->
+            <section class="product-details-extended">
+                 <!-- Tabs Navigation -->
+                <div class="tabs-nav">
+                    <button class="tab-link active" data-tab="description">الوصف الكامل</button>
+                    <!-- <button class="tab-link" data-tab="specifications">المواصفات</button> -->
+                    <!-- <button class="tab-link" data-tab="reviews">المراجعات (15)</button> -->
+                </div>
+
+                 <!-- Tabs Content -->
+                <div id="description" class="tab-content active">
+                    <h3>الوصف التفصيلي للمنتج</h3>
+                    <p>هنا يأتي الوصف الكامل والمفصل للمنتج. يمكنك التحدث عن المواد المستخدمة، تفاصيل التصميم، كيفية العناية بالمنتج، والاستخدامات المقترحة. كلما كانت المعلومات أكثر تفصيلاً ووضوحاً، زادت ثقة العميل.</p>
+                    <ul>
+                        <li>الميزة الأولى الهامة.</li>
+                        <li>الميزة الثانية التي تجعله فريداً.</li>
+                        <li>تفاصيل إضافية عن الجودة.</li>
+                        <li>مصنوع من مواد عالية الجودة تضمن المتانة.</li>
+                    </ul>
+                    <p>نحن في فدفي نضمن لك تجربة مميزة مع هذا المنتج الذي تم اختياره بعناية فائقة ليلبي احتياجاتك.</p>
+                </div>
+
+                <div id="specifications" class="tab-content">
+                    <h3>المواصفات الفنية</h3>
+                    <table style="width: 100%; border-collapse: collapse; text-align: right;">
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <th style="padding: 10px; background-color: var(--light-gray); width: 30%;">المادة</th>
+                                <td style="padding: 10px;">قطن 100%</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <th style="padding: 10px; background-color: var(--light-gray);">الأبعاد</th>
+                                <td style="padding: 10px;">متوفر بمقاسات S, M, L, XL</td>
+                            </tr>
+                             <tr style="border-bottom: 1px solid var(--border-color);">
+                                <th style="padding: 10px; background-color: var(--light-gray);">الوزن</th>
+                                <td style="padding: 10px;">250 جرام (تقريبي)</td>
+                            </tr>
+                            <tr>
+                                <th style="padding: 10px; background-color: var(--light-gray);">بلد الصنع</th>
+                                <td style="padding: 10px;">الصين</td>
+                            </tr>
+                            <!-- أضف المزيد من المواصفات -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="reviews" class="tab-content">
+                    <h3>مراجعات العملاء</h3>
+                     <!-- يمكنك هنا عرض المراجعات الفعلية التي يتم جلبها من قاعدة البيانات -->
+                    <div class="review-item" style="border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 15px;">
+                        <div class="review-rating" style="color: #ffc107; margin-bottom: 5px;">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                        <p class="review-author" style="font-weight: bold; margin-bottom: 5px;">أحمد محمد</p>
+                        <p class="review-date" style="font-size: 0.8rem; color: var(--secondary-color); margin-bottom: 10px;">15 أكتوبر 2023</p>
+                        <p class="review-text">منتج رائع وجودة ممتازة، مطابق للوصف تماماً. سعيد جداً بالشراء.</p>
+                    </div>
+                     <div class="review-item" style="border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 15px;">
+                        <div class="review-rating" style="color: #ffc107; margin-bottom: 5px;">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                        </div>
+                        <p class="review-author" style="font-weight: bold; margin-bottom: 5px;">فاطمة علي</p>
+                        <p class="review-date" style="font-size: 0.8rem; color: var(--secondary-color); margin-bottom: 10px;">12 أكتوبر 2023</p>
+                        <p class="review-text">المنتج جيد، لكن اللون مختلف قليلاً عن الصورة. بشكل عام راضية.</p>
+                    </div>
+                    <!-- إضافة فورم لترك مراجعة -->
+                    <div class="add-review-form" style="margin-top: 30px;">
+                         <h4>أضف مراجعتك</h4>
+                         <!-- نموذج بسيط، يحتاج إلى تطوير للعمل الفعلي -->
+                         <form>
+                             <div style="margin-bottom: 15px;">
+                                <label for="review-rating">تقييمك:</label>
+                                <!-- يمكنك استخدام نجوم تفاعلية هنا بـ JS -->
+                                <select name="review-rating" id="review-rating" required style="padding: 8px; border: 1px solid var(--border-color); border-radius: 4px;">
+                                    <option value="5">5 نجوم</option>
+                                    <option value="4">4 نجوم</option>
+                                    <option value="3">3 نجوم</option>
+                                    <option value="2">نجمتان</option>
+                                    <option value="1">نجمة واحدة</option>
+                                </select>
+                             </div>
+                             <div style="margin-bottom: 15px;">
+                                 <label for="review-text">مراجعتك:</label>
+                                 <textarea id="review-text" name="review-text" rows="4" required style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 4px;"></textarea>
+                             </div>
+                             <button type="submit" class="btn btn-primary">إرسال المراجعة</button>
+                         </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Products -->
+            <section class="related-products" style="margin-top: 50px;">
+                 <h2>منتجات قد تعجبك أيضاً</h2>
+                 <div class="product-grid">
+                     <!-- عرض بطاقات منتجات مشابهة هنا (مثل الصفحة الرئيسية) -->
+                     <div class="product-card"> <a href="product-detail.html"><div class="product-card-image"><img src="images/product1.jpeg" alt="منتج مشابه 1"></div><div class="product-card-body"><span class="product-card-title">منتج آخر من نفس الفئة</span><div class="product-card-price">115.00 ر.س</div></div></a></div>
+                     <div class="product-card"> <a href="product-detail.html"><div class="product-card-image"><img src="images/product1.jpeg" alt="منتج مشابه 2"></div><div class="product-card-body"><span class="product-card-title">اقتراح آخر للمستخدم</span><div class="product-card-price">88.00 ر.س</div></div></a></div>
+                     <div class="product-card"> <a href="product-detail.html"><div class="product-card-image"><img src="images/product1.jpeg" alt="منتج مشابه 3"></div><div class="product-card-body"><span class="product-card-title">خيار ثالث جذاب</span><div class="product-card-price">210.00 ر.س</div></div></a></div>
+                     <div class="product-card"> <a href="product-detail.html"><div class="product-card-image"><img src="images/product1.jpeg" alt="منتج مشابه 4"></div><div class="product-card-body"><span class="product-card-title">منتج إضافي مقترح</span><div class="product-card-price">145.50 ر.س</div></div></a></div>
+                 </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer (نفس الفوتر) -->
+    <footer class="footer">
+        <div class="container">
+             <div class="footer-col"><h4>عن فدفي</h4><ul><li><a href="#">من نحن</a></li><li><a href="#">وظائف</a></li><li><a href="#">المدونة</a></li></ul></div>
+            <div class="footer-col"><h4>خدمة العملاء</h4><ul><li><a href="#">مركز المساعدة</a></li><li><a href="#">سياسة الإرجاع</a></li><li><a href="#">تتبع الطلب</a></li><li><a href="#">اتصل بنا</a></li></ul></div>
+            <div class="footer-col"><h4>روابط سريعة</h4><ul><li><a href="#">الشروط والأحكام</a></li><li><a href="#">سياسة الخصوصية</a></li><li><a href="#">خريطة الموقع</a></li></ul></div>
+            <div class="footer-col"><h4>تابعنا</h4><div class="social-links"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></div></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2023 فدفي. جميع الحقوق محفوظة.</p></div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

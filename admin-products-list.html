@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة المنتجات - لوحة التحكم فدفي</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-page">
+
+    <div class="admin-layout">
+        <!-- Sidebar -->
+         <aside class="admin-sidebar">
+            <div class="logo-container">
+                 <img src="images/logo.png" alt="شعار فدفي">
+                 <h3>لوحة التحكم</h3>
+            </div>
+            <nav class="admin-sidebar-nav">
+                 <ul>
+                    <li><a href="admin-dashboard.html"><i class="fas fa-tachometer-alt fa-fw"></i> الرئيسية</a></li>
+                    <li><a href="admin-products-list.html" class="active"><i class="fas fa-box-open fa-fw"></i> المنتجات</a></li> <!-- Active link -->
+                    <li><a href="admin-add-product.html"><i class="fas fa-plus-circle fa-fw"></i> إضافة منتج</a></li>
+                    <li><a href="admin-orders-list.html"><i class="fas fa-shopping-cart fa-fw"></i> الطلبات</a></li>
+                    <li><a href="admin-users-list.html"><i class="fas fa-users fa-fw"></i> المستخدمون</a></li>
+                    <li><a href="#"><i class="fas fa-cog fa-fw"></i> الإعدادات</a></li>
+                </ul>
+            </nav>
+             <button class="admin-menu-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="admin-main-content">
+            <!-- Header -->
+             <header class="admin-header">
+                <span class="welcome-message">أهلاً بك، [اسم الأدمن]</span>
+                <div class="admin-actions">
+                    <a href="index.html" title="عرض الموقع"><i class="fas fa-eye"></i></a>
+                    <a href="#" title="تسجيل الخروج"><i class="fas fa-sign-out-alt"></i></a>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main class="admin-content">
+                <h1>قائمة المنتجات</h1>
+
+                <div class="table-top-actions">
+                    <!-- Add search/filter elements here if needed -->
+                    <div></div> <!-- Placeholder for alignment -->
+                    <a href="admin-add-product.html" class="btn btn-primary"><i class="fas fa-plus"></i> إضافة منتج جديد</a>
+                </div>
+
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>الصورة</th>
+                                <th>اسم المنتج</th>
+                                <th>SKU</th>
+                                <th>السعر</th>
+                                <th>المخزون</th>
+                                <th>الحالة</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Example Product Row 1 -->
+                            <tr>
+                                <td class="product-image-col"><img src="images/product1.jpg" alt="صورة المنتج"></td>
+                                <td class="product-name-col">اسم المنتج الأول المميز</td>
+                                <td>FDFY-001</td>
+                                <td>99.00 ر.س</td>
+                                <td>50</td>
+                                <td class="status-col"><span class="status-published">منشور</span></td>
+                                <td class="actions-col">
+                                    <button class="btn-action btn-action-edit" title="تعديل"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-action btn-action-delete" title="حذف"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <!-- Example Product Row 2 -->
+                             <tr>
+                                <td class="product-image-col"><img src="images/product2.jpg" alt="صورة المنتج"></td>
+                                <td class="product-name-col">منتج رائع آخر بتصميم جذاب جداً</td>
+                                <td>FDFY-002</td>
+                                <td>145.50 ر.س</td>
+                                <td>15</td>
+                                <td class="status-col"><span class="status-published">منشور</span></td>
+                                <td class="actions-col">
+                                    <button class="btn-action btn-action-edit" title="تعديل"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-action btn-action-delete" title="حذف"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                             <!-- Example Product Row 3 (Draft) -->
+                             <tr>
+                                <td class="product-image-col"><img src="images/product3.jpg" alt="صورة المنتج"></td>
+                                <td class="product-name-col">منتج ثالث قيد الإعداد</td>
+                                <td>FDFY-003</td>
+                                <td>75.00 ر.س</td>
+                                <td>0</td>
+                                <td class="status-col"><span class="status-draft">مسودة</span></td>
+                                <td class="actions-col">
+                                    <button class="btn-action btn-action-edit" title="تعديل"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-action btn-action-delete" title="حذف"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <!-- Add more product rows as needed -->
+                            <!-- Placeholder for empty table -->
+                             <!--
+                             <tr>
+                                 <td colspan="7" style="text-align: center; padding: 30px; white-space: normal;">لا توجد منتجات لعرضها حالياً.</td>
+                             </tr>
+                             -->
+                        </tbody>
+                    </table>
+                </div>
+
+                 <!-- Pagination Example (Visual only) -->
+                 <div class="admin-pagination-container">
+                     <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li class="disabled"><span>&laquo; السابق</span></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">التالي &raquo;</a></li>
+                        </ul>
+                    </nav>
+                 </div>
+
+            </main>
+
+            <!-- Footer -->
+            <footer class="admin-footer">
+                 &copy; 2023 لوحة تحكم فدفي.
+            </footer>
+        </div>
+    </div>
+
+     <script src="js/admin-script.js"></script>
+     <script>
+        // Basic mobile menu toggle for admin sidebar
+        const adminMenuToggle = document.querySelector('.admin-menu-toggle');
+        const adminSidebarNav = document.querySelector('.admin-sidebar-nav');
+        if(adminMenuToggle && adminSidebarNav) {
+            adminMenuToggle.addEventListener('click', () => {
+                adminSidebarNav.classList.toggle('active-mobile');
+            });
+        }
+    </script>
+</body>
+</html>

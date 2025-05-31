@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة منتج جديد - لوحة التحكم فدفي</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-page">
+
+    <div class="admin-layout">
+        <!-- Sidebar -->
+         <aside class="admin-sidebar">
+            <div class="logo-container">
+                 <img src="images/logo.png" alt="شعار فدفي">
+                 <h3>لوحة التحكم</h3>
+            </div>
+            <nav class="admin-sidebar-nav">
+                 <ul>
+                    <li><a href="admin-dashboard.html"><i class="fas fa-tachometer-alt fa-fw"></i> الرئيسية</a></li>
+                    <li><a href="#"><i class="fas fa-box-open fa-fw"></i> المنتجات</a></li>
+                    <li><a href="admin-add-product.html" class="active"><i class="fas fa-plus-circle fa-fw"></i> إضافة منتج</a></li> <!-- Active link -->
+                    <li><a href="#"><i class="fas fa-shopping-cart fa-fw"></i> الطلبات</a></li>
+                    <li><a href="#"><i class="fas fa-users fa-fw"></i> المستخدمون</a></li>
+                    <li><a href="#"><i class="fas fa-cog fa-fw"></i> الإعدادات</a></li>
+                </ul>
+            </nav>
+             <button class="admin-menu-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="admin-main-content">
+            <!-- Header -->
+             <header class="admin-header">
+                <span class="welcome-message">أهلاً بك، [اسم الأدمن]</span>
+                <div class="admin-actions">
+                    <a href="index.html" title="عرض الموقع"><i class="fas fa-eye"></i></a>
+                    <a href="#" title="تسجيل الخروج"><i class="fas fa-sign-out-alt"></i></a>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main class="admin-content">
+                <h1>إضافة منتج جديد</h1>
+
+                <div class="admin-form-container">
+                    <form action="#" method="POST" enctype="multipart/form-data"> <!-- Use enctype for file uploads -->
+                        <div class="form-group">
+                            <label for="product-name">اسم المنتج</label>
+                            <input type="text" id="product-name" name="product_name" required>
+                        </div>
+
+                         <div class="form-group">
+                            <label for="product-description">الوصف الكامل</label>
+                            <textarea id="product-description" name="product_description" rows="6"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="product-short-description">الوصف المختصر</label>
+                            <textarea id="product-short-description" name="product_short_description" rows="3"></textarea>
+                        </div>
+
+                         <div style="display: flex; gap: 20px; flex-wrap: wrap;"> <!-- Layout price fields side-by-side -->
+                            <div class="form-group" style="flex: 1;">
+                                <label for="product-price">السعر (ر.س)</label>
+                                <input type="number" id="product-price" name="product_price" step="0.01" min="0" required>
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label for="product-old-price">السعر القديم (اختياري)</label>
+                                <input type="number" id="product-old-price" name="product_old_price" step="0.01" min="0">
+                            </div>
+                         </div>
+
+                         <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                            <div class="form-group" style="flex: 1;">
+                                <label for="product-sku">رمز المنتج (SKU)</label>
+                                <input type="text" id="product-sku" name="product_sku">
+                            </div>
+                             <div class="form-group" style="flex: 1;">
+                                <label for="product-stock">كمية المخزون</label>
+                                <input type="number" id="product-stock" name="product_stock" min="0" required>
+                            </div>
+                         </div>
+
+
+                        <div class="form-group">
+                            <label for="product-category">الفئة</label>
+                            <select id="product-category" name="product_category" required>
+                                <option value="">-- اختر الفئة --</option>
+                                <option value="electronics">إلكترونيات</option>
+                                <option value="clothing">ملابس</option>
+                                <option value="home">مستلزمات منزلية</option>
+                                <!-- أضف فئات أخرى -->
+                            </select>
+                        </div>
+
+                         <div class="form-group">
+                             <label for="product-images">صور المنتج</label>
+                             <input type="file" id="product-images" name="product_images[]" multiple accept="image/*">
+                             <small style="display: block; margin-top: 5px; color: var(--secondary-color)">يمكنك اختيار أكثر من صورة.</small>
+                         </div>
+
+                         <div class="form-group">
+                             <label for="product-status">الحالة</label>
+                              <select id="product-status" name="product_status">
+                                <option value="published">منشور</option>
+                                <option value="draft">مسودة</option>
+                            </select>
+                         </div>
+
+
+                        <div class="form-group" style="text-align: left;"> <!-- Align button left in RTL -->
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> حفظ المنتج</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </main>
+
+            <!-- Footer -->
+            <footer class="admin-footer">
+                 &copy; 2023 لوحة تحكم فدفي.
+            </footer>
+        </div>
+    </div>
+
+     <script src="js/admin-script.js"></script> <!-- Separate JS for admin if needed -->
+     <script>
+        // Basic mobile menu toggle for admin sidebar
+        const adminMenuToggle = document.querySelector('.admin-menu-toggle');
+        const adminSidebarNav = document.querySelector('.admin-sidebar-nav');
+        if(adminMenuToggle && adminSidebarNav) {
+            adminMenuToggle.addEventListener('click', () => {
+                adminSidebarNav.classList.toggle('active-mobile');
+            });
+        }
+    </script>
+</body>
+</html>

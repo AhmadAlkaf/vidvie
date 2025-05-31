@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة المستخدمين - لوحة التحكم فدفي</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-page">
+
+    <div class="admin-layout">
+        <!-- Sidebar -->
+         <aside class="admin-sidebar">
+            <div class="logo-container">
+                 <img src="images/logo.png" alt="شعار فدفي">
+                 <h3>لوحة التحكم</h3>
+            </div>
+            <nav class="admin-sidebar-nav">
+                 <ul>
+                    <li><a href="admin-dashboard.html"><i class="fas fa-tachometer-alt fa-fw"></i> الرئيسية</a></li>
+                    <li><a href="admin-products-list.html"><i class="fas fa-box-open fa-fw"></i> المنتجات</a></li>
+                    <li><a href="admin-add-product.html"><i class="fas fa-plus-circle fa-fw"></i> إضافة منتج</a></li>
+                    <li><a href="admin-orders-list.html"><i class="fas fa-shopping-cart fa-fw"></i> الطلبات</a></li>
+                    <li><a href="admin-users-list.html" class="active"><i class="fas fa-users fa-fw"></i> المستخدمون</a></li> <!-- Active link -->
+                    <li><a href="#"><i class="fas fa-cog fa-fw"></i> الإعدادات</a></li>
+                </ul>
+            </nav>
+             <button class="admin-menu-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="admin-main-content">
+            <!-- Header -->
+             <header class="admin-header">
+                <span class="welcome-message">أهلاً بك، [اسم الأدمن]</span>
+                <div class="admin-actions">
+                    <a href="index.html" title="عرض الموقع"><i class="fas fa-eye"></i></a>
+                    <a href="#" title="تسجيل الخروج"><i class="fas fa-sign-out-alt"></i></a>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main class="admin-content">
+                <h1>قائمة المستخدمين</h1>
+
+                <div class="table-top-actions">
+                    <!-- Add filters if needed -->
+                </div>
+
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>الاسم</th>
+                                <th>البريد الإلكتروني</th>
+                                <th>تاريخ التسجيل</th>
+                                <th>الدور</th> <!-- Role -->
+                                <th>الحالة</th> <!-- Status -->
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Example User Row 1 (Admin) -->
+                            <tr>
+                                <td>أحمد المسؤول</td>
+                                <td>admin@fadfy.com</td>
+                                <td>2023-01-15</td>
+                                <td>مدير</td>
+                                <td class="status-col"><span class="status-active">نشط</span></td>
+                                <td class="actions-col">
+                                    <button class="btn-action btn-action-edit" title="تعديل"><i class="fas fa-user-edit"></i></button>
+                                    <!-- Admins usually cannot be deleted -->
+                                </td>
+                            </tr>
+                            <!-- Example User Row 2 (Customer) -->
+                            <tr>
+                                <td>فاطمة العلي</td>
+                                <td>fatima.ali@email.com</td>
+                                <td>2023-05-22</td>
+                                <td>عميل</td>
+                                <td class="status-col"><span class="status-active">نشط</span></td>
+                                <td class="actions-col">
+                                    <button class="btn-action btn-action-view" title="عرض التفاصيل"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-action btn-action-edit" title="تعديل"><i class="fas fa-user-edit"></i></button>
+                                    <button class="btn-action btn-action-delete" title="تعطيل"><i class="fas fa-user-slash"></i></button>
+                                </td>
+                            </tr>
+                            <!-- Example User Row 3 (Inactive) -->
+                             <tr>
+                                <td>خالد إبراهيم</td>
+                                <td>khaled.i@email.com</td>
+                                <td>2023-08-10</td>
+                                <td>عميل</td>
+                                <td class="status-col"><span class="status-inactive">غير نشط</span></td>
+                                <td class="actions-col">
+                                     <button class="btn-action btn-action-view" title="عرض التفاصيل"><i class="fas fa-eye"></i></button>
+                                     <button class="btn-action btn-action-edit" title="تعديل"><i class="fas fa-user-edit"></i></button>
+                                     <button class="btn-action btn-action-edit" title="تفعيل"><i class="fas fa-user-check"></i></button> <!-- Example Activate button -->
+                                </td>
+                            </tr>
+                            <!-- Add more user rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+
+                 <!-- Pagination Example -->
+                 <div class="admin-pagination-container">
+                     <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                           <!-- Pagination links -->
+                           <li class="disabled"><span>&laquo; السابق</span></li>
+                           <li class="active"><a href="#">1</a></li>
+                           <li><a href="#">التالي &raquo;</a></li>
+                        </ul>
+                    </nav>
+                 </div>
+
+            </main>
+
+            <!-- Footer -->
+            <footer class="admin-footer">
+                 &copy; 2023 لوحة تحكم فدفي.
+            </footer>
+        </div>
+    </div>
+
+     <script src="js/admin-script.js"></script>
+      <script>
+        // Basic mobile menu toggle for admin sidebar
+        const adminMenuToggle = document.querySelector('.admin-menu-toggle');
+        const adminSidebarNav = document.querySelector('.admin-sidebar-nav');
+        if(adminMenuToggle && adminSidebarNav) {
+            adminMenuToggle.addEventListener('click', () => {
+                adminSidebarNav.classList.toggle('active-mobile');
+            });
+        }
+    </script>
+</body>
+</html>

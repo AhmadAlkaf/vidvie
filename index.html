@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فدفي - الصفحة الرئيسية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- FontAwesome للأيقونات -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts (Cairo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo">
+                <img src="images/logo.png" alt="شعار فدفي">
+            </a>
+            <nav>
+                <ul class="navbar-links">
+                    <li><a href="index.html" class="active">الرئيسية</a></li>
+                    <li><a href="products.html">المنتجات</a></li>
+                    <li><a href="#">الجديد</a></li>
+                    <li><a href="#">الفئات</a></li>
+                    <li><a href="#">الطلبات</a></li> <!-- قد تظهر فقط بعد تسجيل الدخول -->
+                </ul>
+            </nav>
+            <div class="navbar-actions">
+                <a href="#" class="search-icon" title="بحث"><i class="fas fa-search"></i></a>
+                <a href="#" title="إنشاء حساب"><i class="fas fa-user-plus"></i></a>
+                <a href="#" title="تسجيل الدخول"><i class="fas fa-sign-in-alt"></i></a>
+                <a href="cart.html" class="cart-icon" title="سلة التسوق">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span> <!-- سيتم تحديثه بـ JS -->
+                </a>
+                 <!-- زر القائمة للجوال (سيظهر فقط في الشاشات الصغيرة) -->
+                <button class="navbar-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Slider -->
+        <section class="hero-slider">
+            <div class="slide active" style="background-image: url('images/slide1.jpg');">
+                <div class="slide-content">
+                    <h2>أحدث المنتجات وصلت!</h2>
+                    <p>اكتشف تشكيلتنا الجديدة من المنتجات العصرية.</p>
+                    <a href="products.html" class="btn btn-primary">تسوق الآن</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('images/slide1.jpg');">
+                <div class="slide-content">
+                    <h2>عروض خاصة لفترة محدودة</h2>
+                    <p>كل ماتحتاج من مطلاباتك اصبح في مكان واحد </p>
+                    <a href="#" class="btn btn-primary">اكتشف العروض</a>
+                </div>
+            </div>
+            <!-- أضف المزيد من السلايدات حسب الحاجة -->
+
+            <!-- (اختياري) نقاط التنقل للسلايدر -->
+             <div class="slider-nav">
+                <button class="active" data-slide="0"></button>
+                <button data-slide="1"></button>
+                <!-- أضف أزراراً بعدد السلايدات -->
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-products">
+            <div class="container">
+                <h2>منتجات مميزة</h2>
+                <div class="product-grid">
+                    <!-- Product Card 1 -->
+                    <div class="product-card">
+                        <a href="product-detail.html"> <!-- رابط لصفحة المنتج -->
+                           <div class="product-card-image">
+                               <img src="images/product1.jpeg" alt="اسم المنتج 1">
+                           </div>
+                           <div class="product-card-body">
+                               <span class="product-card-title">اسم المنتج الأول المميز</span>
+                               <div class="product-card-price">99.00 ر.س</div>
+                               <button class="btn btn-secondary btn-sm add-to-cart-quick">أضف للسلة</button> <!-- زر إضافة سريع اختياري -->
+                           </div>
+                        </a>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="product-card">
+                         <a href="product-detail.html">
+                           <div class="product-card-image">
+                               <img src="images/product1.jpeg" alt="اسم المنتج 2">
+                           </div>
+                           <div class="product-card-body">
+                               <span class="product-card-title">منتج رائع آخر</span>
+                               <div class="product-card-price">145.50 ر.س</div>
+                               <button class="btn btn-secondary btn-sm add-to-cart-quick">أضف للسلة</button>
+                           </div>
+                        </a>
+                    </div>
+                    <!-- كرر بطاقات المنتجات حسب الحاجة -->
+                     <div class="product-card"> <a href="product-detail.html"><div class="product-card-image"><img src="images/product1.jpeg" alt="اسم المنتج 3"></div><div class="product-card-body"><span class="product-card-title">منتج ثالث مميز</span><div class="product-card-price">75.00 ر.س</div><button class="btn btn-secondary btn-sm add-to-cart-quick">أضف للسلة</button></div></a></div>
+                    <div class="product-card"> <a href="product-detail.html"><div class="product-card-image"><img src="images/product1.jpeg" alt="اسم المنتج 4"></div><div class="product-card-body"><span class="product-card-title">المنتج الرابع بتصميم جذاب</span><div class="product-card-price">210.00 ر.س</div><button class="btn btn-secondary btn-sm add-to-cart-quick">أضف للسلة</button></div></a></div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Ad Banner Section -->
+        <section class="ad-banner" style="background-color: var(--light-gray); text-align: center;">
+            <div class="container">
+                <!-- يمكن أن يكون صورة أو نص إعلاني -->
+                 <a href="#"><img src="images/ad-banner1.jpg" alt="إعلان" style="max-width: 100%; border-radius: 8px;"></a>
+                <!-- أو -->
+                <!-- <h3>إعلان هام من فدفي</h3> -->
+                <!-- <p>لا تفوت فرصة الحصول على أفضل العروض!</p> -->
+            </div>
+        </section>
+
+
+         <!-- New Arrivals Section (يمكن أن يكون مشابه للمنتجات المميزة أو سلايدر أفقي صغير) -->
+        <section class="new-arrivals">
+            <div class="container">
+                <h2>وصل حديثاً</h2>
+                 <div class="product-grid">
+                     <!-- أضف بطاقات للمنتجات الجديدة هنا -->
+                     <div class="product-card"> <a href="product-detail.html"><div class="product-card-image"><img src="images/th-3389625346.jpeg" alt="منتج جديد 1"></div><div class="product-card-body"><span class="product-card-title">أحدث إضافة للمتجر</span><div class="product-card-price">350.00 ر.س</div><button class="btn btn-secondary btn-sm add-to-cart-quick">أضف للسلة</button></div></a></div>
+                    <div class="product-card"> <a href="product-detail.html"><div class="product-card-image"><img src="images/th-3389625346.jpeg" alt="منتج جديد 2"></div><div class="product-card-body"><span class="product-card-title">جديد وحصري</span><div class="product-card-price">99.99 ر.س</div><button class="btn btn-secondary btn-sm add-to-cart-quick">أضف للسلة</button></div></a></div>
+                    </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-col">
+                <h4>عن فدفي</h4>
+                <ul>
+                    <li><a href="#">من نحن</a></li>
+                    <li><a href="#">وظائف</a></li>
+                    <li><a href="#">المدونة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>خدمة العملاء</h4>
+                <ul>
+                    <li><a href="#">مركز المساعدة</a></li>
+                    <li><a href="#">سياسة الإرجاع</a></li>
+                    <li><a href="#">تتبع الطلب</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                </ul>
+            </div>
+             <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#">الشروط والأحكام</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                    <li><a href="#">خريطة الموقع</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>تابعنا</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 فدفي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
